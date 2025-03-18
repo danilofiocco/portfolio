@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rive Hello World</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
 
-<head>
-  <meta name="description" content="Webpage description goes here" />
-  <meta charset="utf-8">
-  <title>Change_me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-</head>
-
-<body>
-  
-<div class="container">
-  
-</div>
-
-<script>
-</script>
-
-</body>
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+    <script>
+      const r = new rive.Rive({
+        src: "adventuregameui.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        // artboard: "Artboard", // Optional. If not supplied the default is selected
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          // Ensure the drawing surface matches the canvas size and device pixel ratio
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>
+  </body>
 </html>
