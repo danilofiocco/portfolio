@@ -3,44 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rive Hello World</title>
-    <style>
-        body, html {
-        
-            margin: 0;
-            font-size: 0px;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            overflow-y: hidden;   /* Prevent vertical scrolling */
-        
-        
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        canvas {
-            width: auto; /* Set canvas width manually */
-            height: auto;
-           /*margin: 0 auto; /* Center the canvas horizontally */
-            display: block; /* Ensure proper centering */
-        }
-        </style>
+    <title>Obento Rush - danilofiocco.com</title>
   </head>
+  <style>
+    body, html{
+        width: 100vw;
+        margin: 0%;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-y: hidden;   /* Prevent vertical scrolling */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    canvas {
+       height: 100vh;
+    }
+  </style>
   <body>
-    <canvas id="canvas" width="1920px" height="1080px"></canvas>
+    <canvas id="canvas"></canvas>
 
     <script src="https://unpkg.com/@rive-app/canvas"></script>
     <script>
       const r = new rive.Rive({
-        src: "obentoRush.riv",
+        src: "obentorush.riv",
         canvas: document.getElementById("canvas"),
         autoplay: true,
-        // artboard: "Artboard", // Optional. If not supplied the default is selected
+        // artboard: "Arboard", // Optional. If not supplied the default is selected
         stateMachines: "State Machine 1",
-        //onLoad: () => {
+        onLoad: () => {
           // Ensure the drawing surface matches the canvas size and device pixel ratio
-          //r.resizeDrawingSurfaceToCanvas();
-        //},
+          r.resizeDrawingSurfaceToCanvas();
+        },
       });
     </script>
   </body>
