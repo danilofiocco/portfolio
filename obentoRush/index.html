@@ -11,7 +11,7 @@ body, html {
     font-size: 0px;
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: auto;   /* Allow vertical scrolling */
+    overflow-y: hidden;   /* Prevent vertical scrolling */
 
 
     display: flex;
@@ -19,7 +19,7 @@ body, html {
     align-items: center;
 }
 canvas {
-    width: 4000px; /* Set canvas width manually */
+    width: 1920px; /* Set canvas width manually */
     margin: 0 auto; /* Center the canvas horizontally */
     display: block; /* Ensure proper centering */
 }
@@ -39,7 +39,7 @@ canvas {
 
         widthDisplay.innerText = browserWidth + ' px';
 
-        // Update Rive input if available
+        /*// Update Rive input if available
         if (widthNumInput) {
             widthNumInput.value = browserWidth;
         }
@@ -54,7 +54,10 @@ canvas {
         // Ensure Rive redraws on canvas resize
         if (riveInstance) {
             riveInstance.resizeDrawingSurfaceToCanvas();
-        }
+        }*/
+        //Altura 100%
+        canvas.style.height = '100vh';
+        canvas.style.width = '1920px';
     }
 
     // Initialize Rive
